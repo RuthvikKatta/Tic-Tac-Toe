@@ -199,16 +199,20 @@ function Draw(){
     document.querySelector('.game-area').classList.add('disabled');
 }
 
+var player_1 = 0;
 function cross(){
     document.getElementById('msg').innerHTML = "<span>Player 1</span> has won the Game 🎉";
     document.querySelector('.dialog').classList.add('appear');
     document.querySelector('.details').classList.add('disappear');
     document.querySelector('.game-area').classList.add('disabled');
+    document.getElementById('Score_1').innerHTML = `Player1 : <span>${++player_1}</span>`;
 }
 
+var player_2 = 0;
 function circle(){
     document.getElementById('msg').innerHTML = "<span>Player 2</span> has won the Game 🎉";
     document.querySelector('.dialog').classList.add('appear');
     document.querySelector('.details').classList.add('disappear');
     document.querySelector('.game-area').classList.add('disabled');
+    document.getElementById('Score_2').innerHTML = `Player2 : <span>${++player_2}</span>`;
 }
