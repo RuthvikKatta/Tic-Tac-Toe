@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1 id="name">Tic-Tac-Toe</h1>
+    <section>
+        <div class="game-area">
+            <div id="box-1" class="box" data-value=0></div>
+            <div id="box-2" class="box" data-value=0></div>
+            <div id="box-3" class="box" data-value=0></div>
+            <div id="box-4" class="box" data-value=0></div>
+            <div id="box-5" class="box" data-value=0></div>
+            <div id="box-6" class="box" data-value=0></div>
+            <div id="box-7" class="box" data-value=0></div>
+            <div id="box-8" class="box" data-value=0></div>
+            <div id="box-9" class="box" data-value=0></div>
+        </div>
+        <div class="left">
+            <div class="dialog">
+                <h2 id="msg"></h2>
+                <button class="restart" onclick="reset()">Restart Game</button>
+            </div>
+            <div class="details">
+                <div class="players">
+                    <h2 class="x">Player x</h2>
+                    <h2 class="o">Player o</h2>
+                </div>
+                <button id="reset" onclick="reset()">Reset Game</button>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>
