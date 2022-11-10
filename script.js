@@ -53,6 +53,7 @@ function reset() {
     document.querySelector('.dialog').classList = 'dialog';
     document.querySelector('.game-area').classList = 'game-area';
     document.querySelector('.details').classList = 'details';
+    document.querySelector('.blackscreen').classList = 'blackscreen';
     count = 0;
 }
 
@@ -197,6 +198,7 @@ function Draw(){
     document.querySelector('.dialog').classList.add('appear');
     document.querySelector('.details').classList.add('disappear');
     document.querySelector('.game-area').classList.add('disabled');
+    document.querySelector('.blackscreen').classList.add('on');
 }
 
 var player_1 = 0;
@@ -205,7 +207,8 @@ function cross(){
     document.querySelector('.dialog').classList.add('appear');
     document.querySelector('.details').classList.add('disappear');
     document.querySelector('.game-area').classList.add('disabled');
-    document.getElementById('Score_1').innerHTML = `Player1 : <span>${++player_1}</span>`;
+    document.querySelector('.blackscreen').classList.add('on');
+    document.getElementById('Score_1').innerHTML = `Player 1 : <span>${++player_1}</span>`;
 }
 
 var player_2 = 0;
@@ -214,5 +217,6 @@ function circle(){
     document.querySelector('.dialog').classList.add('appear');
     document.querySelector('.details').classList.add('disappear');
     document.querySelector('.game-area').classList.add('disabled');
-    document.getElementById('Score_2').innerHTML = `Player2 : <span>${++player_2}</span>`;
+    document.querySelector('.blackscreen').classList.add('on');
+    document.getElementById('Score_2').innerHTML = `Player 2 : <span>${++player_2}</span>`;
 }

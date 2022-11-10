@@ -39,20 +39,10 @@ section {
     grid-template-columns: repeat(3, 10rem);
     grid-template-rows: repeat(3, 10rem);
     gap: 0.625rem;
-    background-color: transparent;
 }
 
-.game-area.disabled {
-    pointer-events: none; 
-}
-.game-area::after{
-    transition-delay: 1s;
-}
-.game-area.disabled::after {
-    content: '';
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.6);
-    inset: -150px 0px 0px;
+.game-area.disabled{
+    pointer-events: none;
 }
 
 .game-area .box {
@@ -61,6 +51,11 @@ section {
     align-items: center;
     background-color: white;
     border-radius: 10px;
+    transition: 0.2s;
+}
+
+.game-area .box:hover {
+    scale: 1.05;
 }
 
 .game-area .box .cross {
@@ -83,11 +78,11 @@ section {
     user-select: none;
 }
 
-.game-area .box::after {
+.game-area .box::after{
     content: '';
     position: absolute;
     width: 0px;
-    transition: 0.5s ease-in;
+    transition: 0.25s ease-in-out;
 }
 
 .game-area .box.row {
@@ -140,10 +135,21 @@ section {
     transform: rotate(45deg);
 }
 
+.blackscreen{
+    transition: 0.75s ease-in-out;
+}
+
+.blackscreen.on{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
 .left {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
     justify-content: center;
     align-items: center;
 }
@@ -157,7 +163,7 @@ section {
     width: 22rem;
     padding: 10px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.888);
+    background: rgb(236, 236, 236);
     position: relative;
 }
 
@@ -165,20 +171,27 @@ section {
     visibility: hidden;
 }
 
-
 .details .players {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
 
+.details .players .x {
+    color: rgb(0, 212, 202);
+}
+
+.details .players .o {
+    color: rgb(255, 104, 129);
+}
+
 .details .players .x.active {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid rgb(0, 212, 202);
     font-weight: 600;
 }
 
 .details .players .o.active {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid rgb(255, 104, 129);
     font-weight: 600;
 }
 
@@ -188,9 +201,6 @@ section {
     justify-content: space-evenly;
 }
 
-.details .scores h2 {
-    position: relative;
-}
 
 #Score_1 span {
     color: rgb(0, 212, 202);
@@ -220,6 +230,7 @@ section {
 
 .dialog {
     position: absolute;
+    z-index: 100;
     padding: 40px;
     border-radius: 10px;
     letter-spacing: 1.5px;
@@ -233,11 +244,11 @@ section {
     visibility: hidden;
 }
 
-h2 {
+.dialog h2 {
     font-weight: 400;
 }
 
-h2 span {
+.dialog h2 span {
     font-weight: 600;
 }
 
@@ -250,8 +261,7 @@ h2 span {
     font-weight: 400;
     color: white;
     width: 90%;
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-    ;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);;
     cursor: pointer;
 }
 
@@ -264,19 +274,18 @@ h2 span {
         flex-direction: column;
         width: 100%;
         margin-left: 0;
+        margin-top: -5.5rem;
     }
-
     #name {
         margin-top: 0.5rem;
     }
 
     .game-area {
         scale: 0.7;
-        margin-top: -4rem;
     }
 
-    .left {
-        margin-top: -1rem;
+    .left{
+        margin-top:-2.5rem ;
     }
 
     .details {
@@ -285,9 +294,5 @@ h2 span {
 
     .dialog {
         scale: 0.7;
-    }
-
-    .game-area.disabled::after {
-        inset: -170px -50px -420px;
     }
 }
