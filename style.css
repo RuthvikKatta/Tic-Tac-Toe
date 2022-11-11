@@ -41,8 +41,22 @@ section {
     gap: 0.625rem;
 }
 
-.game-area.disabled{
+.game-area::after{
+    content: '';
+    position: absolute;
+    transition: 0.5s 0.25s;
+}
+
+.game-area.disabled {
     pointer-events: none;
+} 
+
+.game-area.disabled::after{
+    content: '';
+    position:absolute;
+    inset: 0px;
+    backdrop-filter: blur(2.5px);
+    background-color: rgba(0, 0, 0, 0.574);
 }
 
 .game-area .box {
@@ -54,35 +68,27 @@ section {
     transition: 0.2s;
 }
 
-.game-area .box:hover {
-    scale: 1.05;
-}
-
 .game-area .box .cross {
     font-size: 12rem;
     font-weight: 800;
     color: rgb(6, 255, 243);
     transform: rotate(45deg);
-    position: absolute;
-    cursor: default;
     user-select: none;
 }
 
 .game-area .box .circle {
     font-size: 11rem;
     font-weight: 600;
-    color: rgb(255, 192, 203);
+    color: rgb(255, 104, 129);
     margin-top: -1.5rem;
-    position: absolute;
-    cursor: default;
     user-select: none;
 }
 
-.game-area .box::after{
+.game-area .box::after {
     content: '';
     position: absolute;
     width: 0px;
-    transition: 0.25s ease-in-out;
+    transition: 0.25s;
 }
 
 .game-area .box.row {
@@ -93,8 +99,8 @@ section {
     content: '';
     position: absolute;
     width: 115%;
-    height: 15px;
-    background-color: lavender;
+    height: 10px;
+    background-color: darkgrey;
 }
 
 .game-area .box.column {
@@ -104,9 +110,9 @@ section {
 .game-area .box.column::after {
     content: '';
     position: absolute;
-    width: 15px;
+    width: 10px;
     height: 115%;
-    background-color: lavender;
+    background-color: darkgrey;
 }
 
 .game-area .box.dia {
@@ -116,9 +122,9 @@ section {
 .game-area .box.dia::after {
     content: '';
     position: absolute;
-    width: 15px;
+    width: 10px;
     height: 155%;
-    background-color: lavender;
+    background-color: darkgrey;
     transform: rotate(-45deg);
 }
 
@@ -129,22 +135,10 @@ section {
 .game-area .box.diaopp::after {
     content: '';
     position: absolute;
-    width: 15px;
-    height: 155%;
-    background-color: lavender;
+    width: 10px;
+    height: 160%;
+    background-color: darkgrey;
     transform: rotate(45deg);
-}
-
-.blackscreen{
-    transition: 0.75s ease-in-out;
-}
-
-.blackscreen.on{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .left {
@@ -202,11 +196,11 @@ section {
 }
 
 
-#Score_1 span {
+#Score_1 span,#Player_1 {
     color: rgb(0, 212, 202);
 }
 
-#Score_2 span {
+#Score_2 span,#Player_2 {
     color: rgb(255, 104, 129);
 }
 
@@ -239,8 +233,9 @@ section {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    width: 31.6rem;
+    width: max-content;
     background: rgb(247, 247, 247);
+    transition: 0.2 0.5s;
     visibility: hidden;
 }
 
@@ -261,7 +256,7 @@ section {
     font-weight: 400;
     color: white;
     width: 90%;
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
     cursor: pointer;
 }
 
@@ -274,18 +269,18 @@ section {
         flex-direction: column;
         width: 100%;
         margin-left: 0;
-        margin-top: -5.5rem;
     }
+
     #name {
         margin-top: 0.5rem;
     }
 
     .game-area {
-        scale: 0.7;
+        zoom: 0.7;
     }
 
-    .left{
-        margin-top:-2.5rem ;
+    .left {
+        margin-top: 1.5rem;
     }
 
     .details {
