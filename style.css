@@ -265,12 +265,16 @@ section {
 }
 
 @media (max-width:720px) {
+    *{
+        border: 1px solid white;
+    }
     section {
         flex-direction: column;
         width: 100%;
         height: max-content;
         margin-left: 0;
         justify-content: space-between;
+        overflow: hidden;
     }
 
     #name {
@@ -283,6 +287,7 @@ section {
 
     .left {
         margin-top: 1.5rem;
+        height: 13rem;
     }
 
     .details {
