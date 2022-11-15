@@ -265,9 +265,6 @@ section {
 }
 
 @media (max-width:720px) {
-    *{
-        border: 1px solid white;
-    }
     section {
         flex-direction: column;
         width: 100%;
