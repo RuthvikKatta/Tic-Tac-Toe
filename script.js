@@ -30,11 +30,12 @@ for (let one of boxes) {
                 document.querySelector('.x').classList.add('active');
             }
         }
-        if (count > 8) {
-            Draw();
-            return;
-        }
         verify();
+        if (count > 8) {
+            if(verify() == 1){}
+            else
+                Draw();
+        }
     });
 }
 
@@ -74,6 +75,7 @@ function verify() {
             document.getElementById('box-3').classList.add('row');
             document.querySelector('.game-area').classList.add('disabled');
             cross();
+            return 1;
         }
         else if (b1 == 2 && b2 == 2 && b3 == 2) {
             document.getElementById('box-1').classList.add('row');
@@ -81,6 +83,7 @@ function verify() {
             document.getElementById('box-3').classList.add('row');
             document.querySelector('.game-area').classList.add('disabled');
             circle();
+            return 1;
         }
         else if (b1 == 1 && b4 == 1 && b7 == 1) {
             document.getElementById('box-1').classList.add('column');
@@ -88,6 +91,7 @@ function verify() {
             document.getElementById('box-7').classList.add('column');
             document.querySelector('.game-area').classList.add('disabled');
             cross();
+            return 1;
         }
         else if (b1 == 2 && b4 == 2 && b7 == 2) {
             document.getElementById('box-1').classList.add('column');
@@ -95,6 +99,7 @@ function verify() {
             document.getElementById('box-7').classList.add('column');
             document.querySelector('.game-area').classList.add('disabled');
             circle();
+            return 1;
         }
         else if (b1 == 1 && b5 == 1 && b9 == 1) {
             document.getElementById('box-1').classList.add('dia');
@@ -102,6 +107,7 @@ function verify() {
             document.getElementById('box-9').classList.add('dia');
             document.querySelector('.game-area').classList.add('disabled');
             cross();
+            return 1;
         }
         else if (b1 == 2 && b5 == 2 && b9 == 2) {
             document.getElementById('box-1').classList.add('dia');
@@ -109,6 +115,7 @@ function verify() {
             document.getElementById('box-9').classList.add('dia');
             document.querySelector('.game-area').classList.add('disabled');
             circle();
+            return 1;
         }
     }
     if (b2 != 0) {
@@ -118,6 +125,7 @@ function verify() {
             document.getElementById('box-8').classList.add('column');
             document.querySelector('.game-area').classList.add('disabled');
             cross();
+            return 1;
         }
         else if (b2 == 2 && b5 == 2 && b8 == 2) {
             document.getElementById('box-2').classList.add('column');
@@ -125,6 +133,7 @@ function verify() {
             document.getElementById('box-8').classList.add('column');
             document.querySelector('.game-area').classList.add('disabled');
             circle();
+            return 1;
         }
     }
     if (b3 != 0) {
@@ -134,6 +143,7 @@ function verify() {
             document.getElementById('box-9').classList.add('column');
             document.querySelector('.game-area').classList.add('disabled');
             cross();
+            return 1;
         }
         else if (b3 == 2 && b6 == 2 && b9 == 2) {
             document.getElementById('box-3').classList.add('column');
@@ -141,6 +151,7 @@ function verify() {
             document.getElementById('box-9').classList.add('column');
             document.querySelector('.game-area').classList.add('disabled');
             circle();
+            return 1;
         }
         else if (b3 == 1 && b5 == 1 && b7 == 1) {
             document.getElementById('box-3').classList.add('diaopp');
@@ -148,6 +159,7 @@ function verify() {
             document.getElementById('box-7').classList.add('diaopp');
             document.querySelector('.game-area').classList.add('disabled');
             cross();
+            return 1;
         }
         else if (b3 == 2 && b5 == 2 && b7 == 2) {
             document.getElementById('box-3').classList.add('diaopp');
@@ -155,6 +167,7 @@ function verify() {
             document.getElementById('box-7').classList.add('diaopp');
             document.querySelector('.game-area').classList.add('disabled');
             circle();
+            return 1;
         }
     }
     if (b4 != 0) {
@@ -164,6 +177,7 @@ function verify() {
             document.getElementById('box-6').classList.add('row');
             document.querySelector('.game-area').classList.add('disabled');
             cross();
+            return 1;
         }
         else if (b4 == 2 && b5 == 2 && b6 == 2) {
             document.getElementById('box-4').classList.add('row');
@@ -171,6 +185,7 @@ function verify() {
             document.getElementById('box-6').classList.add('row');
             document.querySelector('.game-area').classList.add('disabled');
             circle();
+            return 1;
         }
     }
     if (b7 != 0) {
@@ -180,6 +195,7 @@ function verify() {
             document.getElementById('box-9').classList.add('row');
             document.querySelector('.game-area').classList.add('disabled');
             cross();
+            return 1;
         }
         else if (b7 == 2 && b8 == 2 && b9 == 2) {
             document.getElementById('box-7').classList.add('row');
@@ -187,6 +203,7 @@ function verify() {
             document.getElementById('box-9').classList.add('row');
             document.querySelector('.game-area').classList.add('disabled');
             circle();
+            return 1;
         }
     }
 }
